@@ -1,8 +1,7 @@
 <template>
-    
-   <div>
+
         <div class="player-card">
-            <img :src="`/${player.img}`" alt="Player Image" class="player-image">
+            <img :src="player.img" alt="Player Image" class="player-image">
             <h2 class="player-name">{{ player.name }}</h2>
             <p class="player-position">{{ player.position }}</p>
             <p class="player-team">{{ player.team }}</p>
@@ -10,15 +9,20 @@
     </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  player: {
-    type: Object,
-    required: true,
-  },
-})
+<script>
 
-const player = props.player
+
+export default {
+    setup () {
+      
+defineProps({
+    player: {
+        type: Object,
+        required: true
+    }
+})
+    }
+}
 </script>
 
 <style lang="scss" scoped>
