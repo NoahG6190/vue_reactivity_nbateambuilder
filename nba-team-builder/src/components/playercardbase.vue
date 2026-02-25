@@ -25,7 +25,7 @@ defineProps({
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .player-card {
     border: 1px solid #ccc;
     border-radius: 8px;

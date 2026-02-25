@@ -89,7 +89,7 @@ const players = ref([
 const playerList = players
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
     display: flex;
     flex-wrap: wrap;
