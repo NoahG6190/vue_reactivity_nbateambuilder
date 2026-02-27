@@ -3,13 +3,26 @@
     <div>
         <h1>NBA Team Creator</h1>
         <div id ="playercontainer"></div>
-       <PlayerCardBase v-for="player in playerList" :key="player.id" :player="player" />
+<PlayerCardBase 
+  v-for="player in playerList" 
+  :key="player.id" 
+  :player="player"
+>
+  <template #default>
+    <button @click="AddToTeam(player)">Add to Team</button>
+  </template>
+</PlayerCardBase>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import PlayerCardBase from '@/components/playercardbase.vue'
+const team = ref([])
+
+const AddToTeam = (player) => {
+  team.value.push(player)
+}
 
 const players = ref([
   {
@@ -23,7 +36,7 @@ const players = ref([
     id: 2,
     name: 'Kevin Durant',
     position: 'SF',
-    team: 'Brooklyn Nets',
+    team: 'Houston Rockets',
     img: 'durant.webp',
   },
   {
@@ -51,7 +64,7 @@ const players = ref([
     id: 6,
     name: 'Luka Dončić',
     position: 'PG',
-    team: 'Dallas Mavericks',
+    team: 'Los Angeles Lakers',
     img: 'luka.avif',
   },
   {
@@ -72,14 +85,14 @@ const players = ref([
     id: 9,
     name: 'Jimmy Butler',
     position: 'SF',
-    team: 'Miami Heat',
+    team: 'Golden State Warriors',
     img: 'butler.avif',
   },
   {
     id: 10,
     name: 'Paul George',
     position: 'SF',
-    team: 'Los Angeles Clippers',
+    team: 'Philadelphia 76ers',
     img: 'paulgeorge.avif',
   },
 ])
@@ -94,5 +107,17 @@ const playerList = players
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.button{
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(#007bff, 10%);
+  }
 }
 </style>

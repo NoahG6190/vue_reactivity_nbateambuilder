@@ -5,23 +5,19 @@
             <h2 class="player-name">{{ player.name }}</h2>
             <p class="player-position">{{ player.position }}</p>
             <p class="player-team">{{ player.team }}</p>
+            <slot></slot>
 
     </div>
 </template>
 
 <script>
-
-
 export default {
-    setup () {
-      
-defineProps({
+  props: {
     player: {
-        type: Object,
-        required: true
+      type: Object,
+      required: true
     }
-})
-    }
+  }
 }
 </script>
 
