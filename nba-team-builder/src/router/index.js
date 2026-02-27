@@ -9,6 +9,11 @@ const router = createRouter({
       name: 'Home',
       component: NBAPlayerPage,
     },
+    {
+      path: '/team',
+      name: 'Your Team',
+      component: () => import('@/views/nbateam.vue'),
+    },
   ],
 })
 
