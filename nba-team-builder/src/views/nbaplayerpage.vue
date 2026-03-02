@@ -2,13 +2,17 @@
     
     <div>
         <h1>NBA Team Creator</h1>
+
+        <router-link to="/team">
+          <button class ="button"> View My Team</button>
+        </router-link>
         <div id ="playercontainer"></div>
 <PlayerCardBase 
   v-for="player in playerList" 
   :key="player.id" 
   :player="player"
 >
-  <template #default>
+  <template  #default>
     <button @click="AddToTeam(player)">Add to Team</button>
   </template>
 </PlayerCardBase>
@@ -19,9 +23,12 @@
 import { ref } from 'vue'
 import PlayerCardBase from '@/components/playercardbase.vue'
 const team = ref([])
-
-const AddToTeam = (player) => {
+function AddToTeam(player) {
+if (team.value.length < 5) {
   team.value.push(player)
+} else {
+  alert('Team is full! Remove a player before adding another.')
+}
 }
 
 const players = ref([
