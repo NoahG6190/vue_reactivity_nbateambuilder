@@ -6,9 +6,6 @@ const store = {
       players: [],
     },
   },
-  AddtoTeam(player){
-    store.commit('ADD_PLAYER', player)
-  },
-  RemoveFromTeam(player){
-    store.commit('REMOVE_PLAYER', player)
-  }
+ function AddtoTeam(player){
+    
+ }
