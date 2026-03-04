@@ -22,6 +22,8 @@
 <script setup>
 import { ref } from 'vue'
 import PlayerCardBase from '@/components/playercardbase.vue'
+import { AddtoTeam } from '@/components/teamStore.js'
+
 const team = ref([])
 function AddToTeam(player) {
 if (team.value.length < 5) {

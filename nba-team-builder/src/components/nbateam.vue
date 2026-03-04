@@ -5,18 +5,21 @@
           <button class ="button">Back to Player Selection </button>
         </router-link>
         <div v-for="player in team" :key="player.id">{{ player.name }}</div>
+        <button class ="button">Remove from Team</button>
     </div>
     <div>
     </div>
 </template>
 
 <script>
-export default {
-    setup () {
-        
+import { store } from './teamStore.js'
+import playercardbase from './playercardbase.vue';
 
-        return {}
-    }
+export default {
+  setup () {
+    const team = store.team.players
+    return { team }
+  }
 }
 </script>
 
