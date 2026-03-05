@@ -13,7 +13,7 @@
   :player="player"
 >
   <template  #default>
-    <button @click="AddToTeam(player)">Add to Team</button>
+    <button class="button" @click="AddToTeam(player)">Add to Team</button>
   </template>
 </PlayerCardBase>
     </div>
@@ -24,13 +24,8 @@ import { ref } from 'vue'
 import PlayerCardBase from '@/components/playercardbase.vue'
 import { AddtoTeam } from '@/components/teamStore.js'
 
-const team = ref([])
 function AddToTeam(player) {
-if (team.value.length < 5) {
-  team.value.push(player)
-} else {
-  alert('Team is full! Remove a player before adding another.')
-}
+  AddtoTeam(player)
 }
 
 const players = ref([
@@ -112,6 +107,7 @@ const playerList = players
 </script>
 
 <style scoped>
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -126,7 +122,7 @@ const playerList = players
   cursor: pointer;
 
   &:hover {
-    background-color: darken(#007bff, 10%);
+    background-color: darken(#007bff, 80%);
   }
 }
 </style>

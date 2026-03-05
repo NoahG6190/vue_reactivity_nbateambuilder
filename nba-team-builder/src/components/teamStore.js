@@ -11,6 +11,9 @@ function AddtoTeam(player) {
   if (!existingPlayer) {
     store.team.players.push(player)
   }
+  if (store.team.players.length > 5) {
+    alert('Team is full! Remove a player before adding another.')
+  }
 }
 
 function RemoveFromTeam(player) {
