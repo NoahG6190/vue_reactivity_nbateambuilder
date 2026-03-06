@@ -99,6 +99,42 @@ const players = ref([
     team: 'Philadelphia 76ers',
     img: 'paulgeorge.avif',
   },
+  {
+    id: 11,
+    name: 'Paolo Banchero',
+    position: 'PF',
+    team: 'Orlando Magic',
+    img: 'paolo.avif',
+  },
+  {
+    id: 12,
+    name: 'Victor Wembanyama',
+    position: 'C',
+    team: 'San Antonio Spurs',
+    img: 'victor.avif',
+  },
+  {
+    id: 13,
+    name: 'Bam Adebayo',
+    position: 'C',
+    team: 'Miami Heat',
+    img: 'bam.webp',
+  },
+
+  {
+    id: 15,
+    name: 'Scoot Henderson',
+    position: 'PG',
+    team: 'Portland Trail Blazers',
+    img: 'scoot.webp',
+  },
+  {
+    id: 16,
+    name: 'Jason Tatum',
+    position: 'SG',
+    team: 'Boston Celtics',
+    img: 'jason.webp',
+  }
 ])
 
 
@@ -107,7 +143,13 @@ const playerList = players
 </script>
 
 <style scoped>
-
+.player {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+}
 .container {
     display: flex;
     flex-wrap: wrap;
