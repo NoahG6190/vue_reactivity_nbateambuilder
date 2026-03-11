@@ -37,7 +37,7 @@ export default {
     const team = store.team.players
 
     function playerImg(player) {
-      if (!player || !player.img) return '/favicon.ico'
+      if (!player || !player.img) return
       return player.img.startsWith('/') ? player.img : `/${player.img}`
     }
 

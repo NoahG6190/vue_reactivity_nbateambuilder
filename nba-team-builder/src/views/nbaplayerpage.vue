@@ -163,8 +163,6 @@ const playerList = players
   padding: 8px 12px;
   cursor: pointer;
 
-  &:hover {
-    background-color: darken(#007bff, 80%);
-  }
+
 }
 </style>
